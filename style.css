@@ -1,0 +1,288 @@
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --link-color: #007bff;
+    --border-color: #000;
+    --card-bg: #fff;
+}
+
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #333;
+        --text-color: #e0e0e0; 
+        --link-color: #80b3ff;
+        --border-color: #fff;
+        --card-bg: #444;
+    }
+}
+
+.dark-mode {
+    --bg-color: #333;
+    --text-color: #e0e0e0;
+    --link-color: #80b3ff;
+    --border-color: #fff;
+    --card-bg: #444;
+    --text-color1: #000;
+}
+
+
+
+/* Google Fonts and basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2, h3, p, li, a {
+    color: var(--text-color1); 
+}
+
+a {
+    color: var(--link-color); 
+}
+
+.review-card p {
+    color: var(--text-color1); 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li:not(:first-child)::before {
+    content: '/';
+    position: absolute;
+    left: -15px;
+    color: #000;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--link-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+.mode-toggle {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--card-bg);
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Main Content Section (Flexbox) */
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px; /* Remove gap to stick borders together */
+    margin-bottom: 40px;
+}
+
+.projects, .work, .education {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.projects {
+    border-right: none;
+}
+
+.work-experience {
+    border-left: none;
+    border-right: none;
+}
+
+.education {
+    border-left: none;
+}
+
+h2, h4, h5 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 30px;
+}
+
+span{
+    color: gray;
+}
+
+
+.projects ul li, .education ul li {
+    margin-bottom: 10px;
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Reviews Section */
+.reviews {
+    text-align: center;
+}
+
+.review-card {
+    display: inline-block;
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    margin: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--link-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .review-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+}
